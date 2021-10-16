@@ -1,0 +1,21 @@
+extends ../layouts/base.pug
+
+block content
+    section.mainSection 
+        form(action="/main" method="get")
+            button.linkBtn main  
+
+    
+        form.createForm(action="/reviewCreate", method="post")
+            input(type="text" name="title" id="titile" required) 
+            input(type="text" name="content" id="content" required) 
+            input(type="submit" value="작성")
+
+
+            each reviews in result
+                div.mainreivews
+                    div #{reviews.id}
+                    div #{reviews.title}
+                    div #{reviews.content}
+                    div #{reviews.createdAt}
+
