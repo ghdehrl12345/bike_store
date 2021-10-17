@@ -9,4 +9,9 @@ router.get("/", (req, res) => {
 router.get("/review", (req, res) => {
   res.render("screens/review");
 });
+
+router.get("/bike", (req, res) => {
+  res.render("screens/main")
+});
+
 module.exports = router;
