@@ -11,7 +11,7 @@ router.get("/review", (req, res) => {
 });
 
 router.get("/bike", (req, res) => {
-  res.render("screens/main")
+  res.render("screens/bike");
 });
 
 module.exports = router;
