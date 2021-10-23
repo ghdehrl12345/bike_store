@@ -6,12 +6,8 @@ router.get("/", (req, res) => {
   res.render("screens/main");
 });
 
-router.get("/review", (req, res) => {
-  res.render("screens/review");
-});
-
-router.get("/bike", (req, res) => {
-  res.render("screens/bike");
+router.get("/signup", (req, res, next) => {
+  res.render("screens/signup");
 });
 
 module.exports = router;

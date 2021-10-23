@@ -4,18 +4,21 @@ const db = require("../db");
 
 const router = express.Router();
 
-router.get("/review", (req, res) => {
-  const selectQuery = `
+router.get("/", (req, res) => {
+  const reviewsSelectQuery = `
           SELECT    id,
+                    score,
                     title,
                     content,
                     createdAt,
                     UserId
-          FROM      review
+            FROM    reviews
       `;
   try {
-    db.query(selectQuery, (error, result) => {
-      res.render("screens/reivew", { result });
+    db.query(reviewsSelectQuery, (error, reviews) => {
+      console.log(reviews);
+
+      res.render("screens/review", { reviews });
     });
   } catch (error) {
     console.log(error);
@@ -26,20 +29,22 @@ router.get("/review", (req, res) => {
 router.post("/reviewCreate", (req, res) => {
   const createQuery = `
       INSERT INTO reivews (
+        score,
         title,
         content,
         createdAt,
         UserId
       ) VALUES (
-        "${title}",
-        "${content}",
+        "${req.body.score}",
+        "${req.body.title}",
+        "${req.body.content}",
         now(),
         1
       )
       `;
 
   try {
-    db.query(createQuery, (error, result) => {
+    db.query(createQuery, (error, reviews) => {
       if (error) {
         console.error(error);
       }
