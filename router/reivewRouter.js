@@ -27,24 +27,24 @@ router.get("/", (req, res) => {
 });
 
 router.post("/reviewCreate", (req, res) => {
-  const createQuery = `
+  const insertQuery = `
       INSERT INTO reivews (
-        score,
-        title,
-        content,
-        createdAt,
-        UserId
+          score,
+          title,
+          content,
+          createdAt,
+          UserId
       ) VALUES (
-        "${req.body.score}",
-        "${req.body.title}",
-        "${req.body.content}",
-        now(),
-        1
+          "${req.body.score}",
+          "${req.body.title}",
+          "${req.body.content}",
+          now(),
+          1
       )
       `;
 
   try {
-    db.query(createQuery, (error, reviews) => {
+    db.query(insertQuery, (error, reviews) => {
       if (error) {
         console.error(error);
       }

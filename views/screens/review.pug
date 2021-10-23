@@ -6,9 +6,16 @@ block content
             button.linkBtn main  
 
     
-        form.createForm(action="/reviewCreate", method="post")
-            input(type="text" name="title" id="titile" required) 
-            input(type="text" name="content" id="content" required) 
+        form(action="/reviewCreate", method="post")
+            SELECT(name="score")
+                option(value="1") 1점
+                option(value="2") 2점
+                option(value="3") 3점
+                option(value="4") 4점
+                option(value="5" sleectd) 5점
+
+            input(type="text" name="title" id="titile" placeholder="제목" required) 
+            input(type="text" name="content" id="content" placeholder="내용" required) 
             input(type="submit" value="작성")
 
             each review in reviews

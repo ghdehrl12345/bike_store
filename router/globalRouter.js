@@ -10,4 +10,7 @@ router.get("/signup", (req, res, next) => {
   res.render("screens/signup");
 });
 
+router.get("/innerBike", (req, res, next) => {
+  res.render("screens/innerBike");
+});
 module.exports = router;
