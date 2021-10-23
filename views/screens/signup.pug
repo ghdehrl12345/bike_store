@@ -4,13 +4,20 @@ block content
     body 
         form(action="/register" method="POST")
             div
-                label(htmlfor="email") EMAIL 
-                input(type="email" name="email" id="email" required)
+                label(htmlfor="userId") ID 
+                input(type="email" name="email" id="email" placeholder="ID" required)
             div
-                label(htmlfor="password") PASSWORD
-                input(type="password" name="password" id="password" required)
+                label(htmlfor="userPassword") PASSWORD
+                input(type="password" name="password" id="password" placeholder="PASSWORD" required)
             div
                 label(htmlfor="nickname") NICKNAME 
-                input(type="text" name="nickname" id="nickname" required)
-
+                input(type="text" name="nickname" id="nickname" placeholder="NICK NAME" required)
+            div
+                label(htmlfor="phone") PHONE NUBER 
+                input(type="text" name="phone" id="phone" placeholder="PHONE NUBER" required)
+            SELECT(name="gender")
+                option(value="남성") 남성
+                option(value="여성") 여성
+                option(value="공개안함" sleectd) 공개안함
+                
             input(type="submit" value="SIGN UP")

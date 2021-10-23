@@ -19,14 +19,18 @@ router.post("/register", (req, res, next) => {
         return res.status(403).send("이미 가입된 이메일이 존재합니다.");
       } else {
         const userInsertQuery = `
-                  INSERT INTO users(
-                      email,
-                      password,
-                      nickname  
+                  INSERT INTO users (
+                      userId,
+                      userPassword,
+                      nickname,
+                      phone,
+                      gender
                   ) VALUES (
-                      "${req.body.email}",
-                      "${req.body.password}",
+                      "${req.body.userId}",
+                      "${req.body.userPassword}",
                       "${req.body.nickname}"
+                      "${req.body.phone}"
+                      "${req.body.gender}"
                   )
                   `;
 
