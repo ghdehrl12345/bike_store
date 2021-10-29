@@ -136,3 +136,21 @@ a {
   text-decoration: none;
   color: #000;
 }
+
+.whole {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.whole .row_1 {
+  width: 1150px;
+}
+
+.whole .row_2 {
+  width: 1150px;
+}
+
+.whole .row_3 {
+  width: 1150px;
+}
