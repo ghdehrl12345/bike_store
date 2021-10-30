@@ -65,6 +65,28 @@ router.post("/bikeCreate", (req, res) => {
   }
 });
 
+router.post("/bikedDelete", (req, res, next) => {
+  const { id } = req.body;
+
+  try {
+    const deleteQuery = `
+      DELETE  FROM bikes
+       WHERE  id = ${id}
+    `;
+
+    db.query(deleteQuery, (error, bikes) => {
+      if (error) {
+        return res.status(400).send("삭제 중 에러 발생!");
+      }
+
+      res.redirect("/");
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(400).send("삭제에 실패했습니다.");
+  }
+});
+
 
 router.get("/signup", checkLogin, (req, res, next) => {
   const loggedIn = req.session.isLoggedIn;
