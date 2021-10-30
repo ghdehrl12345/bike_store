@@ -4,9 +4,8 @@ const db = require("../db");
 
 const router = express.Router();
 
-
-
-router.get("/list", checkLogin, (req, res, next) => {
+router.get("/", checkLogin, (req, res, next) => {
+  
   const loggedIn = req.session.isLoggedIn;
 
   const reviewsSelectQuery = `
@@ -20,11 +19,15 @@ router.get("/list", checkLogin, (req, res, next) => {
     FROM    reviews
 `;
 
+
+
+
 try {
     db.query(reviewsSelectQuery, (error, reviews) => {
       console.log(reviews);
 
-      res.render("screens/review/list", { loggedIn, reviews });
+      res.render("screens/review", { loggedIn, reviews });
+      
     });
   } catch (error) {
     console.log(error);
@@ -32,29 +35,23 @@ try {
   }
 });
 
-router.get("/detail", checkLogin, (req, res, next) => {
-  const loggedIn = req.session.isLoggedIn;
-  res.render("screens/review/detail", { loggedIn });
-});
-
-router.get("/write",checkLogin , (req, res, next) => {
-  const loggedIn = req.session.isLoggedIn;
-
-  res.render("screens/review/write", { loggedIn });
-});
 
 router.post("/reviewCreate", (req, res) => {
-  const insertQuery = `
-      INSERT INTO reivews (
+  const insertQuery = `    
+      INSERT INTO reviews (
           score,
           title,
           content,
-          createdAt
-      ) VALUES (
-          "${req.body.score}",
+          createdAt,
+          userKey,
+          bikeId
+      )	VALUES	(
+          ${req.body.score},
           "${req.body.title}",
           "${req.body.content}",
-          now()          
+          NOW(),
+          ${req.body.userKey},
+          ${req.body.bikeId}
       )
       `;
 
@@ -63,7 +60,7 @@ router.post("/reviewCreate", (req, res) => {
       if (error) {
         console.error(error);
       }
-      res.redirect("/");
+      res.redirect("screens/review");
     });
   } catch (error) {
     console.error(error);
@@ -71,10 +68,30 @@ router.post("/reviewCreate", (req, res) => {
   }
 });
 
-router.get("/update", checkLogin ,(req, res, next) => {
-  const loggedIn = req.session.isLoggedIn;
-  res.render("screens/review/update", { loggedIn });
+
+router.post("/reivewDelete", (req, res, next) => {
+  const { id } = req.body;
+
+  try {
+    const deleteQuery = `
+      DELETE  FROM reviews
+       WHERE  id = ${id}
+    `;
+
+    db.query(deleteQuery, (error, reviews) => {
+      if (error) {
+        return res.status(400).send("삭제 중 에러 발생!");
+      }
+
+      res.redirect("/");
+    });
+  } catch (error) { 
+    console.error(error);
+    return res.status(400).send("삭제에 실패했습니다.");
+  }
 });
+
+
 
 
 module.exports = router;
