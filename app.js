@@ -5,6 +5,7 @@ const path = require("path");
 const globalRouter = require("./router/globalRouter");
 const reivewRouter = require("./router/reivewRouter");
 const innerBikeRouter = require("./router/innerBIkeRouter")
+const loginRouter = require("./router/loginRouter")
 
 
 const PORT = 4050;
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, "/assets")));
 app.use("/", globalRouter);
 app.use("/review", reivewRouter);
 app.use("/innerBike", innerBikeRouter);
+app.use("/signup", loginRouter);
 
 
 app.listen(PORT, () => {

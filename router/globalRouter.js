@@ -65,7 +65,7 @@ router.post("/bikeCreate", (req, res) => {
   }
 });
 
-router.post("/bikedDelete", (req, res, next) => {
+router.post("/bikeDelete", (req, res, next) => {
   const { id } = req.body;
 
   try {

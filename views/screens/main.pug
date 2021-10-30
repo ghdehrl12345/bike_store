@@ -28,7 +28,7 @@ block content
                         div 바퀴 사이즈:---#{bike.wheel} 인치
                         div 자전거 브랜드:-#{bike.brand}
 
-                        form(action="bikedDelete", method="POST")
+                        form(action="bikeDelete", method="POST")
                             input(type="hidden" name="id" value=bike.id)
                             input(type="submit" value="삭제하기")
                     hr

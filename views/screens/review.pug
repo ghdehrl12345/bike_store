@@ -1,0 +1,39 @@
+extends ../layouts/base.pug
+
+block content
+    section.mainSection 
+    
+        form(action="/reviewCreate", method="post")
+            SELECT(name="score")
+                option(value="1") 1점
+                option(value="2") 2점
+                option(value="3") 3점
+                option(value="4") 4점
+                option(value="5" sleectd) 5점
+            input(type="text" name="title"  placeholder="제목" required) 
+            input(type="text" name="content"  placeholder="내용" required) 
+            input(type="number" name="userKey"  placeholder="유저키" required) 
+            input(type="number" name="bikeId"  placeholder="바이크 아이디" required) 
+            input(type="submit" value="작성")
+
+        each review in reviews
+            section.whole
+                section.row
+                    div.reviewBox
+                        div.reviewBox_img
+                        div.reviewBox_txt
+                            div 자전거 아이디:--#{review.id} 
+                            div 자전거 이름:---#{review.title}
+                            div 자전거 가격:---#{review.price} 원
+                            div 자전거 내용:---#{review.content} 
+                            div 자전거 무게:---#{review.weight} kg
+                            div 자전거 길이:---#{review.size} cm
+                            div 바퀴 사이즈:---#{review.wheel} 인치
+                            div 자전거 브랜드:-#{review.brand}
+
+                            form(action="reivewDelete", method="POST")
+                                input(type="hidden" name="id" value=review.id)
+                                input(type="submit" value="삭제하기")
+                        hr
+                        br
+
