@@ -22,3 +22,57 @@ TABLE    이름 : users,bikes
 
 PORT : 4050
 
+
+
+
+router.get("/", (req, res) => {
+  const reviewsSelectQuery = `
+          SELECT    id,
+                    score,
+                    title,
+                    content,
+                    createdAt,
+                    UserId
+            FROM    reviews
+      `;
+  try {
+    db.query(reviewsSelectQuery, (error, reviews) => {
+      console.log(reviews);
+
+      res.render("screens/review", { reviews });
+    });
+  } catch (error) {
+    console.log(error);
+    return res.redirect("/");
+  }
+});
+
+router.post("/reviewCreate", (req, res) => {
+  const insertQuery = `
+      INSERT INTO reivews (
+          score,
+          title,
+          content,
+          createdAt,
+          UserId
+      ) VALUES (
+          "${req.body.score}",
+          "${req.body.title}",
+          "${req.body.content}",
+          now(),
+          1
+      )
+      `;
+
+  try {
+    db.query(insertQuery, (error, reviews) => {
+      if (error) {
+        console.error(error);
+      }
+      res.redirect("/");
+    });
+  } catch (error) {
+    console.error(error);
+    res.redirect("/");
+  }
+});

@@ -18,13 +18,4 @@ block content
             input(type="text" name="content" id="content" placeholder="내용" required) 
             input(type="submit" value="작성")
 
-            each review in reviews
-                div.mainreivews
-                    div #{review.id}
-                    div #{review.score}
-                    div #{review.title}
-                    div #{review.content}
-                    div #{review.createdAt}
-                br
-                hr
 

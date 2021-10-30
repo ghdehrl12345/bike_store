@@ -1,31 +1,27 @@
 const express = require("express");
-const mysql2 = require("mysql2");
-const db = require("../db");
+const checkLogin = require("../middlewares/checkLogin");
 
 const router = express.Router();
 
 
-
-
 router.get("/list", (req, res, next) => {
   const loggedIn = req.session.isLoggedIn;
-  res.render("screens/review/list", { loggedIn });
+  res.render("screens/innerBike/list", { loggedIn });
 });
 
 router.get("/detail", (req, res, next) => {
   const loggedIn = req.session.isLoggedIn;
-  res.render("screens/review/detail", { loggedIn });
+  res.render("screens/innerBike/detail", { loggedIn });
 });
 
 router.get("/write", (req, res, next) => {
   const loggedIn = req.session.isLoggedIn;
-  res.render("screens/review/write", { loggedIn });
+  res.render("screens/innerBike/write", { loggedIn });
 });
 
 router.get("/update", (req, res, next) => {
   const loggedIn = req.session.isLoggedIn;
-  res.render("screens/review/update", { loggedIn });
+  res.render("screens/innerBike/update", { loggedIn });
 });
-
 
 module.exports = router;
