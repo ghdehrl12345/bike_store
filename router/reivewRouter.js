@@ -37,21 +37,21 @@ try {
 
 
 router.post("/reviewCreate", (req, res) => {
-  const insertQuery = `
-      INSERT INTO reivews (
+  const insertQuery = `    
+      INSERT INTO reviews (
           score,
           title,
           content,
           createdAt,
           userKey,
           bikeId
-      ) VALUES (
-          "${req.body.score}",
+      )	VALUES	(
+          ${req.body.score},
           "${req.body.title}",
           "${req.body.content}",
-          now(),          
+          NOW(),
           ${req.body.userKey},
-          ${req.body.bikeid}
+          ${req.body.bikeId}
       )
       `;
 
@@ -85,18 +85,13 @@ router.post("/reivewDelete", (req, res, next) => {
 
       res.redirect("/");
     });
-  } catch (error) {
+  } catch (error) { 
     console.error(error);
     return res.status(400).send("삭제에 실패했습니다.");
   }
 });
 
 
-
-router.get("/review", checkLogin ,(req, res, next) => {
-  const loggedIn = req.session.isLoggedIn;
-  res.render("screens/review", { loggedIn });
-});
 
 
 module.exports = router;
