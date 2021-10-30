@@ -1,16 +1,31 @@
 extends ../layouts/base.pug
 
+
 block content 
-    ssection.whole
-        section.row_1
-            div.bikeBox_1
-            div.bikeBox_2
-            div.bikeBox_3
-        section.row_2    
-            div.bikeBox_4
-            div.bikeBox_5
-            div.bikeBox_6
-        section.row_3   
-            div.bikeBox_7
-            div.bikeBox_8
-            div.bikeBox_9
+    form(action="/bikeCreate", method="post")
+        input(type="text" name="title"  placeholder="자전거 이름" required) 
+        input(type="text"  name="price"  placeholder="가격" required) 
+        input(type="text" name="content"  placeholder="내용" required) 
+        input(type="text" name="weight"  placeholder="무게" required)  
+        input(type="text" name="size"  placeholder="크기" required) 
+        input(type="text" name="wheel"  placeholder="바퀴 사이즈" required) 
+        input(type="text" name="brand"  placeholder="브랜드" required) 
+        input(type="submit" value="작성")
+
+    each bike in bikes
+        section.whole
+            section.row
+                div.bikeBox
+                    div.bikeBox_img
+                    div.bikeBox_txt
+                        div #{bike.id}
+                        div #{bike.title}
+                        div #{bike.price}
+                        div #{bike.content}
+                        div #{bike.weight}
+                        div #{bike.size}
+                        div #{bike.wheel}
+                        div #{bike.brand}
+
+
+

@@ -1,10 +1,7 @@
-extends ../layouts/base.pug
+extends ../../layouts/base.pug
 
 block content
     section.mainSection 
-        form(action="/main" method="get")
-            button.linkBtn main  
-
     
         form(action="/reviewCreate", method="post")
             SELECT(name="score")
@@ -14,8 +11,8 @@ block content
                 option(value="4") 4점
                 option(value="5" sleectd) 5점
 
-            input(type="text" name="title" id="titile" placeholder="제목" required) 
-            input(type="text" name="content" id="content" placeholder="내용" required) 
+            input(type="text" name="title"  placeholder="제목" required) 
+            input(type="text" name="content"  placeholder="내용" required) 
             input(type="submit" value="작성")
 
 
