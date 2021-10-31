@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, "/assets")));
 
 app.use("/", globalRouter);
 app.use("/review", reivewRouter);
-app.use("/innerBike", basketRouter);
+app.use("/basket", basketRouter);
 app.use("/signup", loginRouter);
 
 

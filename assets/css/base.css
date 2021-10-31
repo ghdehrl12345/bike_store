@@ -18,54 +18,49 @@ body {
   align-items: center;
   justify-content: space-around;
 }
-<<<<<<< HEAD
-=======
 
 .fas.fa-bicycle {
-    font-size: 35px;
-
+  font-size: 35px;
 }
 
 .header_mn .fas.fa-bicycle:hover {
-    transition: 0.5s;
-    border-bottom: 2px solid lightblue;
-    color: greenyellow;
-
+  transition: 0.5s;
+  border-bottom: 2px solid lightblue;
+  color: greenyellow;
 }
 
 .header_vs .vs_bt:hover {
-    transition: 0.5s;
-    border-bottom: 2px solid lightblue;
-    color: greenyellow;
+  transition: 0.5s;
+  border-bottom: 2px solid lightblue;
+  color: greenyellow;
 }
 
 .header_rw .rw_bt:hover {
-    transition: 0.5s;
-    border-bottom: 2px solid lightblue;
-    color: greenyellow;
+  transition: 0.5s;
+  border-bottom: 2px solid lightblue;
+  color: greenyellow;
 }
 
 .header_ib .ib_bt:hover {
-    transition: 0.5s;
-    border-bottom: 2px solid lightblue;
-    color: greenyellow;
+  transition: 0.5s;
+  border-bottom: 2px solid lightblue;
+  color: greenyellow;
 }
 
 .header_lg .lg_bt:hover {
-    transition: 0.5s;
-    border-bottom: 2px solid lightblue;
-    color: greenyellow;
-} 
+  transition: 0.5s;
+  border-bottom: 2px solid lightblue;
+  color: greenyellow;
+}
 
 .header_sin .sin_bt:hover {
-    transition: 0.5s;
-    border-bottom: 2px solid lightblue;
-    color: greenyellow;
+  transition: 0.5s;
+  border-bottom: 2px solid lightblue;
+  color: greenyellow;
 }
 
 .header_sun .sun_bt:hover {
-    transition: 0.5s;
-    border-bottom: 2px solid lightblue;
-    color: greenyellow;
+  transition: 0.5s;
+  border-bottom: 2px solid lightblue;
+  color: greenyellow;
 }
->>>>>>> 10cd0a719176374764a2fe52c97756dc126c9088

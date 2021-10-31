@@ -6,8 +6,8 @@ const router = express.Router();
 
 
 router.get("/", checkLogin, (req, res, next) => {
+  
   const loggedIn = req.session.isLoggedIn;
-
 
   const bikesSelectQuery = `
   SELECT    id,
