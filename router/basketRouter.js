@@ -6,7 +6,7 @@ const db = require("../db")
 const router = express.Router();
 
 
-router.get("/innerbike", checkLogin, (req, res, next) => {
+router.get("/basket", checkLogin, (req, res, next) => {
   const loggedIn = req.session.isLoggedIn;
 
 
@@ -22,10 +22,39 @@ try {
     db.query(basketSelectQuery, (error, baskets) => {
       console.log(bikes);
 
-  return res.render("screens/basket", { loggedIn, bikes });
+  return res.render("screens/basket", { loggedIn, baskets });
     });
   } catch (error) {
     return res.redirect("/");
+  }
+});
+
+
+router.post("/basketCreate", (req, res) => {
+  const basketinsertQuery = `
+      INSERT INTO bikes (
+          title,
+          price,
+          brand
+          bikeId
+      ) VALUES (
+          "${req.body.title}",
+          ${req.body.price},
+          "${req.body.brand}",
+          ${req.body.bikeId}
+      )
+      `;
+
+  try {
+    db.query(basketinsertQuery, (error, basket) => {
+      if (error) {
+        console.error(error);
+      }
+      res.redirect("/basket");
+    });
+  } catch (error) {
+    console.error(error);
+    res.redirect("/");
   }
 });
 

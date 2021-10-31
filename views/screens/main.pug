@@ -17,8 +17,8 @@ block content
         section.whole
             section.row
                 div.bikeBox_1
-                    div.bikeBox_img
                     div.bikeBox_txt 
+                        div 자전거 아이디:--#{bike.id} 번   
                         div 자전거 이름:---#{bike.title}
                         div 자전거 가격:---#{bike.price} 만원
                         div 자전거 내용:---#{bike.content} 
@@ -30,6 +30,7 @@ block content
                         form(action="bikeDelete", method="POST")
                             input(type="hidden" name="id" value=bike.id)
                             input(type="submit" value="삭제하기")
+                    div.bikeBox_img
                     hr
                      
 

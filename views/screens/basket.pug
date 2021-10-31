@@ -1,5 +1,26 @@
 extends ../layouts/base.pug
 
 block content
+    form(action="/bikeCreate", method="post")
+        input(type="text" name="title"  placeholder="자전거 이름" required) 
+        input(type="number"  name="price"  placeholder="가격" required) 
+        input(type="text" name="brand"  placeholder="브랜드" required) 
+        input(type="submit" value="작성")
 
+
+    each basket in baskets
+        section.whole
+            section.row
+                div.basketBox_1
+                    div.basketBox_img
+                    div.basketBox_txt 
+                        duv 자전거 아이디:--#{basket.id} 번   
+                        div 자전거 이름:---#{basket.title}
+                        div 자전거 가격:---#{basket.price} 만원
+                        div 자전거 브랜드:-#{bibasketke.brand}
     
+
+                        form(action="bikeDelete", method="POST")
+                            input(type="hidden" name="id" value=bike.id)
+                            input(type="submit" value="삭제하기")
+                    hr

@@ -1,9 +1,17 @@
 .bikeBox_1 {
-    width: 100%;
-    height: 150px;
-    
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+  width: 100%;
+  height: 150px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bikeBox_img {
+  width: 60px;
+  height: 60px;
+  background-color: #999;
+  background-size: cover;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWos-nzWK6E-djkaWwf7W9ExBCcs57OMF1qg&usqp=CAU");
 }

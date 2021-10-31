@@ -23,7 +23,6 @@ router.get("/", checkLogin, (req, res, next) => {
 
 try {
     db.query(bikesSelectQuery, (error, bikes) => {
-      console.log(bikes);
 
   return res.render("screens/main", { loggedIn, bikes });
     });

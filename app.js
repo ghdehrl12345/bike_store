@@ -4,7 +4,7 @@ const session = require("express-session");
 const path = require("path");
 const globalRouter = require("./router/globalRouter");
 const reivewRouter = require("./router/reivewRouter");
-const innerBikeRouter = require("./router/innerBIkeRouter")
+const basketRouter = require("./router/basketRouter")
 const loginRouter = require("./router/loginRouter")
 
 
@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, "/assets")));
 
 app.use("/", globalRouter);
 app.use("/review", reivewRouter);
-app.use("/innerBike", innerBikeRouter);
+app.use("/innerBike", basketRouter);
 app.use("/signup", loginRouter);
 
 

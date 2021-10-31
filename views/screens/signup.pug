@@ -2,19 +2,30 @@ extends ../layouts/base.pug
 
 block content       
     block content
-        body 
-            form(action="/userCreate" method="post")
-                input(type="text" name="userId"  placeholder="아이디" required) 
-                input(type="text" name="userPassword"  placeholder="비밀번호" required) 
-                input(type="text" name="nickname"  placeholder="닉네임" required) 
-                input(type="text" name="phone"  placeholder="전화번호" required) 
-                SELECT(name="gender")
-                    option(value="남성") 남성
-                    option(value="여성") 여성
-                    option(value="공개안함" sleectd) 공개안함
-                input(type="text" name="hobby"  placeholder="취미" required)     
-                input(type="submit" value="SIGN UP")
+        form(action="/userCreate" method="post")
+            input(type="text" name="userId"  placeholder="아이디" required) 
+            input(type="text" name="userPassword"  placeholder="비밀번호" required) 
+            input(type="text" name="nickname"  placeholder="닉네임" required) 
+            input(type="text" name="phone"  placeholder="전화번호" required) 
+            SELECT(name="gender")
+                option(value="남성") 남성
+                option(value="여성") 여성
+                option(value="공개안함" sleectd) 공개안함
+            input(type="text" name="hobby"  placeholder="취미" required)     
+            input(type="submit" value="SIGN UP")
 
-                hr
-                br
+        
+        each user in users
+            section.whole
+                section.row
+                    div.userBox_1
+                        div.userBox_txt 
+                            div 유저 번호:--#{user.userKey} 번   
+                            div 유저 아이디:---#{user.userId}
+                            div 유저 이름:---#{user.nickname} 
+                            div 유저 폰번호:---#{user.phone} 
+                            div 유저 성별:---#{user.gender} 
+                            div 유저 취미:---#{user.hobby} 
+
+                        hr
         

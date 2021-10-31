@@ -1,7 +1,7 @@
 extends ../layouts/base.pug
 
 block content
-    form(action="/reviewCreate", method="post")
+    form(action="/review/reviewCreate", method="post")
         SELECT(name="score")
             option(value="1") 1점
             option(value="2") 2점
@@ -28,9 +28,21 @@ block content
                         div 리뷰 쓴사람:---#{review.userKey} 
                         div 자전거아이디:---#{review.bikeId} 
 
-                        form(action="reivewDelete", method="POST")
+                        form(action="/review/reivewDelete", method="POST")
                             input(type="hidden" name="id" value=review.id)
                             input(type="submit" value="삭제하기")
+
                     hr
                     br
+    each bike in bikes 
+        section.reviewbike 
+            div 자전거 아이디:--#{bike.id} 번   
+            div 자전거 이름:---#{bike.title}
+            div 자전거 가격:---#{bike.price} 만원
+            div 자전거 브랜드:-#{bike.brand}
+
+    each user in users 
+        section.userwbike 
+            div 자전거 아이디:--#{user.userKey} 번   
+            div 자전거 가격:---#{user.nickanme} 
 

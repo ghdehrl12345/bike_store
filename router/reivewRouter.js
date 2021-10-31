@@ -19,19 +19,31 @@ router.get("/", checkLogin, (req, res, next) => {
     FROM    reviews
 `;
 
+  const bikesSelectQuery = `
+  SELECT    id,
+            title,
+            price,
+            brand
+    FROM    bikes
+`;
+  const usersSelectQuery = `
+  SELECT    userKey,
+            nickanme
+    FROM    users
+`;
 
 
 
 try {
-    db.query(reviewsSelectQuery, (error, reviews) => {
+    db.query(reviewsSelectQuery,bikesSelectQuery,usersSelectQuery, (error, reviews,bikes,users) => {
       console.log(reviews);
 
-      res.render("screens/review", { loggedIn, reviews });
+      res.render("screens/review", { loggedIn, reviews , bikes, users});
       
     });
   } catch (error) {
     console.log(error);
-    return res.redirect("/");
+    return res.redirect("/"); 
   }
 });
 
@@ -83,7 +95,7 @@ router.post("/reivewDelete", (req, res, next) => {
         return res.status(400).send("삭제 중 에러 발생!");
       }
 
-      res.redirect("/");
+      res.redirect("/review");
     });
   } catch (error) { 
     console.error(error);
