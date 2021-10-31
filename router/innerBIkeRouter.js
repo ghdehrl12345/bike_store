@@ -6,9 +6,33 @@ const db = require("../db")
 const router = express.Router();
 
 
-router.get("/list",checkLogin, (req, res, next) => {
+router.get("/innerbike", checkLogin, (req, res, next) => {
   const loggedIn = req.session.isLoggedIn;
-  res.render("screens/innerBike/list", { loggedIn });
+
+
+  const basketSelectQuery = `
+  SELECT    id,
+            title,
+            price,
+            brand
+    FROM    bikes
+`;
+
+try {
+    db.query(basketSelectQuery, (error, baskets) => {
+      console.log(bikes);
+
+  return res.render("screens/basket", { loggedIn, bikes });
+    });
+  } catch (error) {
+    return res.redirect("/");
+  }
+});
+
+
+router.get("/innerbike",checkLogin, (req, res, next) => {
+  const loggedIn = req.session.isLoggedIn;
+  res.render("screens/innerBike", { loggedIn });
 });
 
 router.get("/detail",checkLogin, (req, res, next) => {

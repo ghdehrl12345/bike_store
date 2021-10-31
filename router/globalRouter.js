@@ -102,10 +102,11 @@ router.get("/signin", checkLogin, (req, res, next) => {
 });
 
 
-router.get("/innerBike", checkLogin, (req, res, next) => {
+
+router.get("/basket", checkLogin, (req, res, next) => {
   const loggedIn = req.session.isLoggedIn;
 
-  res.render("screens/innerBike", { loggedIn });
+  res.render("screens/basket", { loggedIn });
 });
 
 
