@@ -1,17 +1,17 @@
 .header {
   width: 100%;
   height: 70px;
-  background: linear-gradient(#304352, #d7d2cc);
+  background: linear-gradient(red, #d7d2cc);
 }
 
 body {
-  background: linear-gradient(#304352, #d7d2cc);
+  background: linear-gradient(red, #d7d2cc);
 }
 
 .menus {
   width: 100%;
   height: 70px;
-  background: linear-gradient(#304352, #d7d2cc);
+  background: linear-gradient(red, #d7d2cc);
 
   display: flex;
   flex-direction: row;

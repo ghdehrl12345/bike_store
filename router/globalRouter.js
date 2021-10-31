@@ -94,11 +94,7 @@ router.get("/signup", checkLogin, (req, res, next) => {
   res.render("screens/signup", { loggedIn });
 });
 
-router.get("/signin", checkLogin, (req, res, next) => {
-  const loggedIn = req.session.isLoggedIn;
 
-  res.render("screens/signin", { loggedIn });
-});
 
 
 

@@ -40,9 +40,13 @@ block content
             div 자전거 이름:---#{bike.title}
             div 자전거 가격:---#{bike.price} 만원
             div 자전거 브랜드:-#{bike.brand}
+    
+        hr
+        bt
 
     each user in users 
         section.userwbike 
-            div 자전거 아이디:--#{user.userKey} 번   
-            div 자전거 가격:---#{user.nickanme} 
-
+            div 유저 아이디:--#{user.userKey} 번   
+            div 유저 이름:---#{user.nickanme} 
+        hr
+        br

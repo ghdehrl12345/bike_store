@@ -20,13 +20,11 @@ html(lang="en")
                 li.header_ib
                     a(href="/basket") 장바구니
                 if loggedIn
-                    li.header_lg
+                    li.header_lgo
                         a(href="/logout") 로그아웃
                 else
-                    li.header_sin
-                        a(href="/signin") 로그인
-                    li.header_sun
-                        a(href="/signup") 회원가입
+                    li.header_lgi
+                        a(href="/signup") 로그인
         
 
         block content 

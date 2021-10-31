@@ -6,14 +6,14 @@ const router = express.Router();
 
 
 
-router.get("/signup", checkLogin, (req, res, next) => {
+router.get("/", checkLogin, (req, res, next) => {
   
   const loggedIn = req.session.isLoggedIn;
 
   const usersSelectQuery = `
   SELECT    userKey,
             userId,
-            nickname,
+            nickanme,
             phone,
             gender,
             hobby
@@ -21,9 +21,10 @@ router.get("/signup", checkLogin, (req, res, next) => {
 `;
 
 try {
-    db.query(usersSelectQuery, (error, users) => {
 
-  return res.render("screens/signup", { loggedIn, users });
+
+    db.query(usersSelectQuery, (error, users) => {
+      res.render("screens/signup", { loggedIn, users});
     });
   } catch (error) {
     return res.redirect("/");
@@ -31,7 +32,7 @@ try {
 });
 
 router.post("/userCreate", (req, res) => {
-    const insertQuery = `
+    const userinsertQuery = `
         INSERT INTO users (
             userId,
             userPassword,
@@ -50,11 +51,11 @@ router.post("/userCreate", (req, res) => {
         `;
   
     try {
-      db.query(insertQuery, (error, users) => {
+      db.query(userinsertQuery, (error, users) => {
         if (error) {
           console.error(error);
         }
-        res.redirect("/signin");
+        res.redirect("/signup");
       });
     } catch (error) {
       console.error(error);
