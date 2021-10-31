@@ -4,6 +4,7 @@ const db = require("../db")
 
 const router = express.Router();
 
+
 router.get("/", checkLogin, (req, res, next) => {
   const loggedIn = req.session.isLoggedIn;
 
@@ -100,6 +101,12 @@ router.get("/signin", checkLogin, (req, res, next) => {
   res.render("screens/signin", { loggedIn });
 });
 
+
+router.get("/innerBike", checkLogin, (req, res, next) => {
+  const loggedIn = req.session.isLoggedIn;
+
+  res.render("screens/innerBike", { loggedIn });
+});
 
 
 module.exports = router;
