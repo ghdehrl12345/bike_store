@@ -15,12 +15,15 @@ block content
                     div.basketBox_img
                     div.basketBox_txt 
                         duv 자전거 아이디:--#{basket.id} 번   
-                        div 자전거 이름:---#{basket.title}
-                        div 자전거 가격:---#{basket.price} 만원
-                        div 자전거 브랜드:-#{bibasketke.brand}
+                        div 자전거 이름:----#{basket.title}
+                        div 자전거 가격:----#{basket.price} 만원
+                        div 자전거 브랜드:--#{basket.brand}
+                        div 자전거 가격:----#{basket.userKey} 번
+                        div 자전거 브랜드:--#{basket.bikeId} 번
+
     
 
-                        form(action="bikeDelete", method="POST")
-                            input(type="hidden" name="id" value=bike.id)
+                        form(action="basketDelete", method="POST")
+                            input(type="hidden" name="id" value=basket.id)
                             input(type="submit" value="삭제하기")
                     hr

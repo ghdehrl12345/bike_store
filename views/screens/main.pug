@@ -6,10 +6,23 @@ block content
         input(type="text" name="title"  placeholder="자전거 이름" required) 
         input(type="number"  name="price"  placeholder="가격" required) 
         input(type="text" name="content"  placeholder="내용" required) 
-        input(type="text" name="weight"  placeholder="무게" required) 
+        input(type="number" name="weight"  placeholder="무게" required) 
         input(type="text" name="size"  placeholder="크기" required) 
-        input(type="text" name="wheel"  placeholder="바퀴 사이즈" required)     
-        input(type="text" name="brand"  placeholder="브랜드" required) 
+        input(type="number" name="wheel"  placeholder="바퀴 사이즈" required)     
+        SELECT(name="brand")
+            option(value="1") 알톤
+            option(value="2") AGE
+            option(value="3") 언노운
+            option(value="4") 엔진11
+            option(value="5") 콘스탄틴
+            option(value="6") 삼천리
+            option(value="7") CELLO 
+            option(value="8") TREK
+            option(value="9") 메리다
+            option(value="10") 스페셜라이즈드
+            option(value="11") 엘파마
+            option(value="5") 위아위스
+            option(value="12") 기타
         input(type="submit" value="작성")
 
 
@@ -17,8 +30,7 @@ block content
         section.whole
             section.row
                 div.bikeBox_1
-                    div.bikeBox_txt 
-                        div 자전거 아이디:--#{bike.id} 번   
+                    div.bikeBox_txt    
                         div 자전거 이름:---#{bike.title}
                         div 자전거 가격:---#{bike.price} 만원
                         div 자전거 내용:---#{bike.content} 
@@ -27,9 +39,9 @@ block content
                         div 바퀴 사이즈:---#{bike.wheel} inch
                         div 자전거 브랜드:-#{bike.brand}
 
-                        form(action="bikeDelete", method="POST")
+                        form.delete_bt(action="bikeDelete", method="POST")
                             input(type="hidden" name="id" value=bike.id)
-                            input(type="submit" value="삭제하기")
+                            input.delete_bt(type="submit" value="삭제하기")
                     div.bikeBox_img
                     hr
                     br

@@ -35,10 +35,12 @@ router.get("/", checkLogin, (req, res, next) => {
 
 
 try {
-    db.query(reviewsSelectQuery,bikesSelectQuery,usersSelectQuery, (error, reviews,bikes,users) => {
-      console.log(reviews);
-
-      res.render("screens/review", { loggedIn, reviews , bikes, users});
+    db.query(reviewsSelectQuery, (error, reviews) => {
+      db.query(bikesSelectQuery, (error, bikes) => {
+        db.query(usersSelectQuery, (error, users) => {
+          res.render("screens/review", { loggedIn, reviews , bikes, users});
+        })
+      })
       
     });
   } catch (error) {
