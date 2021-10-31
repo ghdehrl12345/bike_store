@@ -24,6 +24,10 @@ body {
 
 }
 
+.menus {
+    font-family: 'Jua', sans-serif;
+}
+
 .header_mn .fas.fa-bicycle:hover {
     transition: 0.5s;
     border-bottom: 2px solid lightblue;
