@@ -12,22 +12,22 @@ html(lang="en")
         header.header
             ul.menus
                 li.header_mn
-                    a(href="/")  
+                    a.mn_bt(href="/")  
                         i.fas.fa-bicycle 
                 li.header_vs
-                    a(href="/vs") 비교하기
+                    a.vs_bt(href="/vs") 비교하기
                 li.header_rw
-                    a(href="/review") 리뷰쓰기,보기
+                    a.rw_bt(href="/review") 리뷰쓰기,보기
                 li.header_ib
-                    a(href="/basket") 장바구니
+                    a.ib_bt(href="/basket") 장바구니
                 if loggedIn
                     li.header_lg
-                        a(href="/logout") 로그아웃
+                        a.lg_bt(href="/logout") 로그아웃
                 else
                     li.header_sin
-                        a(href="/signin") 로그인
+                        a.sin_bt(href="/signin") 로그인
                     li.header_sun
-                        a(href="/signup") 회원가입
+                        a.sun_bt(href="/signup") 회원가입
         
 
         block content 
