@@ -154,3 +154,19 @@ a {
 .whole .row_3 {
   width: 1150px;
 }
+
+input {
+  margin-top: 10px;
+  margin-right: 10px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  outline: none;
+  background: none;
+  border: none;
+
+  box-shadow: 3px 3px 3px #999;
+}
