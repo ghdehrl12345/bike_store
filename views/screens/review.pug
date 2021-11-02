@@ -15,22 +15,19 @@ block content
         input(type="submit" value="작성")
 
     each review in reviews
-        section.whole
-            section.row
-                div.reviewBox
-                    div.reviewBox_img
-                    div.reviewBox_txt
-                        div 리뷰 아이디:---#{review.id}
-                        div 리뷰 평점:----#{review.score} 점
-                        div 리뷰 제목:----#{review.title} 
-                        div 리뷰 내용:----#{review.content} 
-                        div 리뷰 생성일:---#{review.createdAt} 
-                        div 리뷰 쓴사람:---#{review.userKey} 
-                        div 자전거아이디:---#{review.bikeId} 
+        section.reviewwhole
+            div.reviewBox_txt
+                div 리뷰 아이디:---#{review.id}
+                div 리뷰 평점:----#{review.score} 점
+                div 리뷰 제목:----#{review.title} 
+                div 리뷰 내용:----#{review.content} 
+                div 리뷰 생성일:---#{review.createdAt} 
+                div 리뷰 쓴사람:---#{review.userKey} 
+                div 자전거아이디:---#{review.bikeId} 
 
-                        form(action="/review/reivewDelete", method="POST")
-                            input(type="hidden" name="id" value=review.id)
-                            input(type="submit" value="삭제하기")
+                form(action="/review/reivewDelete", method="POST")
+                    input(type="hidden" name="id" value=review.id)
+                    input(type="submit" value="삭제하기")
 
                     hr
                     br

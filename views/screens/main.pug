@@ -27,24 +27,22 @@ block content
 
 
     each bike in bikes
-        section.whole
-            section.row
-                div.bikeBox_1
-                    div.bikeBox_txt    
-                        div 자전거 이름:---#{bike.title}
-                        div 자전거 가격:---#{bike.price} 만원
-                        div 자전거 내용:---#{bike.content} 
-                        div 자전거 무게:---#{bike.weight} kg
-                        div 자전거 크기:---#{bike.size} size
-                        div 바퀴 사이즈:---#{bike.wheel} inch
-                        div 자전거 브랜드:-#{bike.brand}
+        section.mainwhole
+            div.bikeBox_txt    
+                div 자전거 이름:---#{bike.title}
+                div 자전거 가격:---#{bike.price} 만원
+                div 자전거 내용:---#{bike.content} 
+                div 자전거 무게:---#{bike.weight} kg
+                div 자전거 크기:---#{bike.size} size
+                div 바퀴 사이즈:---#{bike.wheel} inch
+                div 자전거 브랜드:-#{bike.brand}
 
-                        form.delete_bt(action="bikeDelete", method="POST")
-                            input(type="hidden" name="id" value=bike.id)
-                            button.delete_bt(type="submit" value="삭제하기")
-                    div.bikeBox_img
-                    hr
-                    br
+                form.delete_bt(action="bikeDelete", method="POST")
+                    input(type="hidden" name="id" value=bike.id)
+                    input.delete_bt(type="submit" value="삭제하기")
+            div.bikeBox_img
+            hr
+            br
                      
 
 
