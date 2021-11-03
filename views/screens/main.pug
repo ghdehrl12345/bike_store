@@ -7,7 +7,7 @@ block content
         input(type="number"  name="price"  placeholder="가격" required) 
         input(type="text" name="content"  placeholder="내용" required) 
         input(type="number" name="weight"  placeholder="무게" required) 
-        input(type="text" name="size"  placeholder="크기" required) 
+        input(type="number" name="size"  placeholder="크기" required) 
         input(type="number" name="wheel"  placeholder="바퀴 사이즈" required)     
         SELECT(name="brand")
             option(value="알톤") 알톤
@@ -15,27 +15,27 @@ block content
             option(value="언노운") 언노운
             option(value="엔진11") 엔진11
             option(value="콘스탄틴") 콘스탄틴
-            option(value="삼천리") 삼천리
+            option(value="삼천리" ) 삼천리
             option(value="CELLO") CELLO 
             option(value="TREK") TREK
             option(value="메리다") 메리다
             option(value="스페셜라이즈드") 스페셜라이즈드
             option(value="엘파마") 엘파마
             option(value="위아위스") 위아위스
-            option(value="기타") 기타
+            option(value="기타" selected) 기타
         input(type="submit" value="작성")
 
 
     each bike in bikes
         section.mainwhole
             div.bikeBox_txt    
-                div 자전거 이름:---#{bike.title}
-                div 자전거 가격:---#{bike.price} 만원
-                div 자전거 내용:---#{bike.content} 
-                div 자전거 무게:---#{bike.weight} kg
-                div 자전거 크기:---#{bike.size} size
-                div 바퀴 사이즈:---#{bike.wheel} inch
-                div 자전거 브랜드:-#{bike.brand}
+                div --자전거 이름:--- <br> #{bike.title}
+                div 자전거 가격:--- <br> #{bike.price} 만원
+                div 자전거 내용:--- <br> #{bike.content} 
+                div 자전거 무게:--- <br> #{bike.weight} kg
+                div 자전거 크기:--- <br> #{bike.size} size
+                div 바퀴 사이즈:--- <br> #{bike.wheel} inch
+                div 자전거 브랜드:--- <br> #{bike.brand}
 
                 form.delete_bt(action="bikeDelete", method="POST")
                     input(type="hidden" name="id" value=bike.id)
