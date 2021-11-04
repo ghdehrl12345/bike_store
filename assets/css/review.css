@@ -9,3 +9,12 @@
   align-items: center;
   justify-content: center;
 }
+
+.reviewForm {
+  margin-bottom: 30px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

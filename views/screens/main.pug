@@ -2,14 +2,14 @@ extends ../layouts/base.pug
 
 
 block content 
-    form(action="/bikeCreate", method="post")
+    form.mainForm(action="/bikeCreate", method="post")
         input(type="text" name="title"  placeholder="자전거 이름" required) 
         input(type="number"  name="price"  placeholder="가격" required) 
         input(type="text" name="content"  placeholder="내용" required) 
         input(type="number" name="weight"  placeholder="무게" required) 
         input(type="number" name="size"  placeholder="크기" required) 
         input(type="number" name="wheel"  placeholder="바퀴 사이즈" required)     
-        SELECT(name="brand")
+        SELECT.selectbox(name="brand")
             option(value="알톤") 알톤
             option(value="AGE") AGE
             option(value="언노운") 언노운
@@ -29,13 +29,13 @@ block content
     each bike in bikes
         section.mainwhole
             div.bikeBox_txt    
-                div --자전거 이름:--- <br> #{bike.title}
-                div 자전거 가격:--- <br> #{bike.price} 만원
-                div 자전거 내용:--- <br> #{bike.content} 
-                div 자전거 무게:--- <br> #{bike.weight} kg
-                div 자전거 크기:--- <br> #{bike.size} size
-                div 바퀴 사이즈:--- <br> #{bike.wheel} inch
-                div 자전거 브랜드:--- <br> #{bike.brand}
+                div 자전거 이름:--- #{bike.title}
+                div 자전거 가격:--- #{bike.price} 만원
+                div 자전거 내용:--- #{bike.content} 
+                div 자전거 무게:--- #{bike.weight} kg
+                div 자전거 크기:--- #{bike.size} size
+                div 바퀴 사이즈:--- #{bike.wheel} inch
+                div 자전거 브랜드:--- #{bike.brand}
 
                 form.delete_bt(action="bikeDelete", method="POST")
                     input(type="hidden" name="id" value=bike.id)

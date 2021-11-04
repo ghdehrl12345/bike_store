@@ -1,4 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -169,4 +169,24 @@ input {
   border: none;
 
   box-shadow: 3px 3px 3px #999;
+}
+
+.selectbox {
+  margin-top: 10px;
+  margin-right: 10px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  outline: none;
+  background: rgb(222, 197, 197);
+  border: none;
+
+  box-shadow: 3px 3px 3px #999;
+}
+
+html {
+  font-family: "Jua", sans-serif;
 }

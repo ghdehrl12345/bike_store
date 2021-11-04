@@ -6,6 +6,7 @@ const globalRouter = require("./router/globalRouter");
 const reivewRouter = require("./router/reivewRouter");
 const basketRouter = require("./router/basketRouter")
 const loginRouter = require("./router/loginRouter");
+const vsRouter = require("./router/vsRouter");
 const { isBoxedPrimitive } = require("util/types");
 const { url } = require("inspector");
 
@@ -35,6 +36,7 @@ app.use("/", globalRouter);
 app.use("/review", reivewRouter);
 app.use("/basket", basketRouter);
 app.use("/signup", loginRouter);
+app.use("/vs", vsRouter);
 
 
 app.listen(PORT, () => {

@@ -98,11 +98,6 @@ router.get("/signup", checkLogin, (req, res, next) => {
 
 
 
-router.get("/basket", checkLogin, (req, res, next) => {
-  const loggedIn = req.session.isLoggedIn;
-
-  res.render("screens/basket", { loggedIn });
-});
 
 
 module.exports = router;

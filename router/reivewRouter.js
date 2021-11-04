@@ -74,7 +74,7 @@ router.post("/reviewCreate", (req, res) => {
       if (error) {
         console.error(error);
       }
-      res.redirect("screens/review");
+      res.redirect("/review");
     });
   } catch (error) {
     console.error(error);

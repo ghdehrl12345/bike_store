@@ -4,13 +4,16 @@ block content
     block content
         form(action="/signup/userCreate" method="post")
             input(type="text" name="userId"  placeholder="아이디" required) 
-            input(type="text" name="userPassword"  placeholder="비밀번호" required) 
+            input(type="password" name="userPassword"  placeholder="비밀번호" required) 
             input(type="text" name="nickname"  placeholder="닉네임" required) 
             input(type="text" name="phone"  placeholder="전화번호" required) 
-            SELECT(name="gender")
+            SELECT.selectbox(name="gender")
                 option(value="남성") 남성
                 option(value="여성") 여성
                 option(value="공개안함" sleectd) 공개안함
             input(type="text" name="hobby"  placeholder="취미" required)     
             input(type="submit" value="SIGN UP")
 
+            br
+            hr
+            br
