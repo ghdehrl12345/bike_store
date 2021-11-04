@@ -14,7 +14,7 @@ block content
             option(value="AGE") AGE
             option(value="언노운") 언노운
             option(value="엔진11") 엔진11
-            option(value="콘스탄틴") 콘스탄틴
+            option(value="콘스탄틴" selected) 콘스탄틴
             option(value="삼천리" ) 삼천리
             option(value="CELLO") CELLO 
             option(value="TREK") TREK
@@ -22,7 +22,7 @@ block content
             option(value="스페셜라이즈드") 스페셜라이즈드
             option(value="엘파마") 엘파마
             option(value="위아위스") 위아위스
-            option(value="기타" selected) 기타
+            option(value="기타" ) 기타
         input(type="submit" value="작성")
 
 
@@ -32,7 +32,7 @@ block content
                 div 자전거 이름:--- #{bike.title}
                 div 자전거 가격:--- #{bike.price} 만원
                 div 자전거 내용:--- #{bike.content} 
-                div 자전거 무게:--- #{bike.weight} kg
+                div 자전거 무게:--- 약 #{bike.weight} kg
                 div 자전거 크기:--- #{bike.size} size
                 div 바퀴 사이즈:--- #{bike.wheel} inch
                 div 자전거 브랜드:--- #{bike.brand}
@@ -40,7 +40,6 @@ block content
                 form.delete_bt(action="bikeDelete", method="POST")
                     input(type="hidden" name="id" value=bike.id)
                     input.delete_bt(type="submit" value="삭제하기")
-            div.bikeBox_img
             hr
             br
                      
