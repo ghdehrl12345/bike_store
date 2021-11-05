@@ -2,6 +2,15 @@ extends ../layouts/base.pug
 
 block content       
     block content
+        secton.signupCheckBox
+            div.signupCheckBox_txt1  이용약관 동의
+            div.signupCheckBox_box1
+                input(type="checkbox")   
+                span 동의하시겟습니까?     
+            div.signupCheckBox_txt2  개인정보 처리방침
+            div.signupCheckBox_box2
+                input(type="checkbox")   
+                span 동의하시겟습니까? 
         form(action="/signup/userCreate" method="post")
             input(type="text" name="userId"  placeholder="아이디" required) 
             input(type="password" name="userPassword"  placeholder="비밀번호" required) 
