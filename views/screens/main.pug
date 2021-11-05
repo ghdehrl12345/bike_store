@@ -3,8 +3,8 @@ extends ../layouts/base.pug
 
 block content 
     form.mainForm(action="/bikeCreate", method="post")
-        input(type="text" name="title"  placeholder="자전거 이름" required) 
-        input(type="number"  name="price"  placeholder="가격" required) 
+        input.title(type="text" name="title"  placeholder="자전거 이름" required) 
+        input(type="number"  name="price"  placeholder="가격 ex)50 = 50만원" required) 
         input(type="text" name="content"  placeholder="내용" required) 
         input(type="number" name="weight"  placeholder="무게" required) 
         input(type="number" name="size"  placeholder="크기" required) 
@@ -29,13 +29,13 @@ block content
     each bike in bikes
         section.mainwhole
             div.bikeBox_txt    
-                div 자전거 이름:--- #{bike.title}
-                div 자전거 가격:--- #{bike.price} 만원
-                div 자전거 내용:--- #{bike.content} 
-                div 자전거 무게:--- 약 #{bike.weight} kg
-                div 자전거 크기:--- #{bike.size} size
-                div 바퀴 사이즈:--- #{bike.wheel} inch
-                div 자전거 브랜드:--- #{bike.brand}
+                div.txt_name 자전거 이름:--- #{bike.title}
+                div.txt_price 자전거 가격:--- #{bike.price} 만원
+                div.txt_ct 자전거 내용:--- #{bike.content} 
+                div.txt_wt 자전거 무게:--- 약 #{bike.weight} kg
+                div.txt_sz 자전거 크기:--- #{bike.size} size
+                div.txt_wl 바퀴 사이즈:--- #{bike.wheel} inch
+                div.txt_bd 자전거 브랜드:--- #{bike.brand}
 
                 form.delete_bt(action="bikeDelete", method="POST")
                     input(type="hidden" name="id" value=bike.id)

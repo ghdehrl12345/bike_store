@@ -165,7 +165,8 @@ input {
   justify-content: center;
 
   outline: none;
-  background: rgb(222, 197, 197);
+
+  background: #0AFFA5;
   border: none;
 
   box-shadow: 3px 3px 3px #999;
@@ -181,7 +182,7 @@ input {
   justify-content: center;
 
   outline: none;
-  background: rgb(222, 197, 197);
+  background: #0AFFA5;
   border: none;
 
   box-shadow: 3px 3px 3px #999;

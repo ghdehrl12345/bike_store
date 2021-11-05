@@ -71,42 +71,42 @@
 
 .header_mn .fas.fa-bicycle:hover {
   transition: 0.5s;
-  border-bottom: 2px solid lightblue;
-  color: greenyellow;
+  border-bottom: 2px solid #2DFF2E;
+  color: #0265ED;
 }
 
 .header_vs .vs_bt:hover {
   transition: 0.5s;
-  border-bottom: 2px solid lightblue;
-  color: greenyellow;
+  border-bottom: 2px solid #2DFF2E;
+  color: #0265ED;
 }
 
 .header_rw .rw_bt:hover {
   transition: 0.5s;
-  border-bottom: 2px solid lightblue;
-  color: greenyellow;
+  border-bottom: 2px solid #2DFF2E;
+  color: #0265ED;
 }
 
 .header_ib .ib_bt:hover {
   transition: 0.5s;
-  border-bottom: 2px solid lightblue;
-  color: greenyellow;
+  border-bottom: 2px solid #2DFF2E;
+  color: #0265ED;
 }
 
 .header_lg .lg_bt:hover {
   transition: 0.5s;
-  border-bottom: 2px solid lightblue;
-  color: greenyellow;
+  border-bottom: 2px solid #2DFF2E;
+  color: #0265ED;
 }
 
 .header_sin .sin_bt:hover {
   transition: 0.5s;
-  border-bottom: 2px solid lightblue;
-  color: greenyellow;
+  border-bottom: 2px solid #2DFF2E;
+  color: #0265ED;
 }
 
 .header_sun .sun_bt:hover {
   transition: 0.5s;
-  border-bottom: 2px solid lightblue;
-  color: greenyellow;
+  border-bottom: 2px solid #2DFF2E;
+  color: #0265ED;
 }
