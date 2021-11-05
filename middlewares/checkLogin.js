@@ -1,5 +1,5 @@
 const checkLogin = (req, res, next) => {
-    req.session.isLoggedIn = false;
+    req.session.isLoggedIn = true;
   
     next();
 };
