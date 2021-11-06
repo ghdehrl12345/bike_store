@@ -4,7 +4,20 @@ block content
     form.basketForm(action="/bikeCreate", method="post")
         input(type="text" name="title"  placeholder="자전거 이름" required) 
         input(type="number"  name="price"  placeholder="가격" required) 
-        input(type="text" name="brand"  placeholder="브랜드" required) 
+        SELECT.selectbox(name="brand")
+            option(value="알톤") 알톤
+            option(value="AGE") AGE
+            option(value="언노운") 언노운
+            option(value="엔진11") 엔진11
+            option(value="콘스탄틴" selected) 콘스탄틴
+            option(value="삼천리" ) 삼천리
+            option(value="CELLO") CELLO 
+            option(value="TREK") TREK
+            option(value="메리다") 메리다
+            option(value="스페셜라이즈드") 스페셜라이즈드
+            option(value="엘파마") 엘파마
+            option(value="위아위스") 위아위스
+            option(value="기타" ) 기 
         input(type="submit" value="작성")
 
 
