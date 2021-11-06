@@ -95,11 +95,13 @@ router.get("/signup", checkLogin, (req, res, next) => {
 });
 
 
+
 router.get("/dictionary", checkLogin, (req, res, next) => {
   const loggedIn = req.session.isLoggedIn;
 
-  res.render("screens/dictionary  ", { loggedIn });
+  res.render("screens/dictionary", { loggedIn });
 });
+
 
 
 

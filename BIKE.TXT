@@ -116,3 +116,9 @@ router.post("/reviewCreate", (req, res) => {
     res.redirect("/");
   }
 });
+
+
+
+req.session.isLoggedIn = true;
+  
+    next();
