@@ -1,124 +1,22 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title BIKE_STORE
-        link(rel="stylesheet", href="/css/styles.css")
-    body 
+extends ../layouts/base.pug
 
-        header.header
-            ul.menus
-                li.header_mn
-                    a(href="/") 메인 화면
-                li.header_vs
-                    a(href="/vs") 비교하기
-                li.header_rw
-                    a(href="/review") 리뷰쓰기,보기
-                li.header_ib
-                    a(href="/innerBike") 장바구니
-                if loggedIn
-                    li.header_lg
-                        a(href="/logout") 로그아웃
-                else
-                    li.header_sin
-                        a(href="/signin") 로그인
-                    li.header_sun
-                        a(href="/signup") 회원가입
-                    
+block content
 
-        block content 
-                
-        footer.footer 
-            div.ceo 대표: 홍도기
-            div.businessNumber 사업자 번호: 123-45-12345
-            div.adress 주소: 충청남도 공주시 신금2길 17, 모두의 자전거 공주센터
-            div.phoneNumber 번호: 1234-1424
-            div.email 메일: 4leaf.edu.hdk@gmail.com
-이름 BIKE_STORE
+    nav.dictionaryNav 
+        div.fixe <h1> 픽시
+            div.fixe_txt <h6>  변속이 불가능한 고정식 기어를 장착한 자전거를 말합니다.
+                div.txt_1    <h6>  변속기어가 없기 떼문에 오직 주행자의 힘으로만 움직이는 방식으로 큰 인기를 끌어 픽시 자전거 매니아층이 형성되어 있습니다. 픽시 자전거를 구매하기 전 사용 용도에 맞게 프레임 디자인, 무게, 핸들바, 기어비를 고려하여 선택하여야 합니다.
+        hr
+        div.mini <h1> 미니벨로
+            div.fixe_txt <h6>  변속이 불가능한 고정식 기어를 장착한 자전거를 말합니다.
+                div.txt_1    <h6>  변속기어가 없기 떼문에 오직 주행자의 힘으로만 움직이는 방식으로 큰 인기를 끌어 픽시 자전거 매니아층이 형성되어 있습니다. 픽시 자전거를 구매하기 전 사용 용도에 맞게 프레임 디자인, 무게, 핸들바, 기어비를 고려하여 선택하여야 합니다.
+        hr
+        div.mtb MTB
+            div.fixe_txt <h6>  변속이 불가능한 고정식 기어를 장착한 자전거를 말합니다.
+                div.txt_1    <h6>  변속기어가 없기 떼문에 오직 주행자의 힘으로만 움직이는 방식으로 큰 인기를 끌어 픽시 자전거 매니아층이 형성되어 있습니다. 픽시 자전거를 구매하기 전 사용 용도에 맞게 프레임 디자인, 무게, 핸들바, 기어비를 고려하여 선택하여야 합니다.
+        hr
+        div.road 로드
+            div.fixe_txt <h6>  변속이 불가능한 고정식 기어를 장착한 자전거를 말합니다.
+                div.txt_1    <h6>  변속기어가 없기 떼문에 오직 주행자의 힘으로만 움직이는 방식으로 큰 인기를 끌어 픽시 자전거 매니아층이 형성되어 있습니다. 픽시 자전거를 구매하기 전 사용 용도에 맞게 프레임 디자인, 무게, 핸들바, 기어비를 고려하여 선택하여야 합니다.
+        hr
 
-목적 자전거 초보자 또는 좋아하는 사람들이 뭐를 사야할지 모르거나 헷갈릴때 이 사이트를 보고 다른자전거랑 비교를 할수있게 하기 위하여
-
-팀 홍도기,오동건
-
-4개에 퍼그 페이지
-1. 메인 자전거 선택 페이지 (두개를 선택하면 좌-우 비교되는 새로운 페이지 생성)
-2. 자전거 추가 옵션 페이지
-3. 회원가입 페이지
-4. 후기페이지
-
-2개에 CRUD
-1.회원가입 CRUD
-2.자전거 장바구니 CRUD
-
-기술   홍도기,
-디자인 오동건
-
-DATABASE 이름 : BIKE_STORE
-TABLE    이름 : users,bikes
-
-PORT : 4050
-
-
-
-
-
-
-router.get("/", (req, res) => {
-  const reviewsSelectQuery = `
-          SELECT    id,
-                    score,
-                    title,
-                    content,
-                    createdAt,
-                    UserId
-            FROM    reviews
-      `;
-  try {
-    db.query(reviewsSelectQuery, (error, reviews) => {
-      console.log(reviews);
-
-      res.render("screens/review", { reviews });
-    });
-  } catch (error) {
-    console.log(error);
-    return res.redirect("/");
-  }
-});
-
-router.post("/reviewCreate", (req, res) => {
-  const insertQuery = `
-      INSERT INTO reivews (
-          score,
-          title,
-          content,
-          createdAt,
-          UserId
-      ) VALUES (
-          "${req.body.score}",
-          "${req.body.title}",
-          "${req.body.content}",
-          now(),
-          1
-      )
-      `;
-
-  try {
-    db.query(insertQuery, (error, reviews) => {
-      if (error) {
-        console.error(error);
-      }
-      res.redirect("/");
-    });
-  } catch (error) {
-    console.error(error);
-    res.redirect("/");
-  }
-});
-
-
-
-req.session.isLoggedIn = true;
-  
-    next();
